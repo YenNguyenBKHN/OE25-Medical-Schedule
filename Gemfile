@@ -1,11 +1,10 @@
-# frozen_string_literal: true
-
 source "https://rubygems.org"
 git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "2.6.3"
 
-gem "bootsnap", ">= 1.4.2", require: false
+gem "bootsnap", require: false
+gem "bootstrap-sass"
 gem "config"
 gem "figaro"
 gem "i18n-js"

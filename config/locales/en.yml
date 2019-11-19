@@ -1,2 +1,4 @@
 en:
-  hello: "Hello world"
+  hello: Hello world
+  app_name: Medical Schedule
+  welcome_app: Welcome to our Medical Schedule App!
