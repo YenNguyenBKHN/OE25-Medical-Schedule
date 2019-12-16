@@ -26,14 +26,18 @@ d.save
   d.save
 end
 
-20.times do |n|
-  Patient.create!(user_name: Faker::Name.name,
+7.times do |n|
+  p = Patient.create!(user_name: Faker::Name.name,
     full_name: Faker::Name.name,
     email: "email#{n}@gmail.com",
     password: "111111",
     password_confirmation: "111111",
     activated: true,
     activated_at: Time.zone.now)
+  p.image.attach io: File.open(Rails.root
+    .join("app", "assets", "images", "default_avatar.png")),
+    filename: "default_avatar.png"
+  p.save
 end
 
 3.times do |n|
@@ -44,6 +48,10 @@ end
     password_confirmation: "111111",
     activated: true,
     activated_at: Time.zone.now)
+  p.image.attach io: File.open(Rails.root
+    .join("app", "assets", "images", "default_avatar.png")),
+    filename: "default_avatar.png"
+  p.save
 end
 
 8.times do |n|

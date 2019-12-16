@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     post "/signin", to: "sessions#create"
     delete "/signout", to: "sessions#destroy"
 
-    resources :patients
+    resources :patients do
+      resources :medicalrecords
+    end
     resources :doctors do
       resources :comments
       resources :schedules
