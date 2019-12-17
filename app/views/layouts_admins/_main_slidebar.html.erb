@@ -14,19 +14,19 @@
           <%= link_to "#", class: "nav-link" do %>
             <i class="nav-icon fas fa-table"></i>
             <p>
-              <%= t " manager_user" %>
+              <%= t "manager_user" %>
               <i class="fas fa-angle-left right"></i>
             </p>
           <% end %>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <%= link_to "#", :class => "nav-link" do %>
+              <%= link_to admin_doctors_path, :class => "nav-link" do %>
                  <i class="far fa-circle nav-icon"></i>
                 <%= t "manager_doctor" %>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to "#" , class: "nav-link" do %>
+              <%= link_to admin_staffs_path , class: "nav-link" do %>
                 <i class="far fa-circle nav-icon"></i>
                 <p><%= t "manager_staff" %></p>
               <% end %>

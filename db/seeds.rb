@@ -84,3 +84,10 @@ end
     password_confirmation: "111111",
     position: "Nhân viên hành chính")
 end
+
+User.create!(user_name: "phuongnguyen",
+  full_name: "Nguyen Thi Phuong",
+  email: "admin@gmail.com",
+  password: "111111",
+  password_confirmation: "111111",
+  role: "Admin")
