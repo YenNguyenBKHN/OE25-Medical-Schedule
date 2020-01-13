@@ -2,7 +2,11 @@
   <div class="doctor_history">
     <div class="single_doctor_history">
       <h2><%= @doctor.full_name %></h2>
+      <%= imdb_style_rating_for @doctor, current_user %>
       <p><%= @doctor.description %></p>
+      <% if current_user %>
+        <%= rating_for @doctor, 'quality', disable_after_rate: true, imdb_avg: true %>
+      <% end %>
     </div>
   </div>
 </div>
