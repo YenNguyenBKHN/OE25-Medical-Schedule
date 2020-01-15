@@ -1,0 +1,18 @@
+<%= t "app_name" %>
+<%= t "mail_appointment_result" %>
+<%= t "hi" %>
+<%= @appointment.patient_full_name %>
+<% if @appointment.accept? %>
+  <%= t "accepted_email" %>
+  <%= t "appointment_info" %>:
+  <%= t "full_name" %>: <%= @appointment.patient_full_name %>
+  <%= t "phone" %>: <%= @appointment.phone_patient %>
+  <%= t "address" %>: <%= @appointment.address_patient %>
+  <%= t "doctor" %>: <%= @appointment.doctor_full_name %>
+  <%= t "appointment_time" %>: <%= I18n.l(@appointment.start_time, format: :short) %> <%= @appointment.day %>
+  <%= t "room" %>: <%= @appointment.doctor_room %>
+  <%= t "hope" %>
+<% elsif @appointment.cancel? %>
+  <%= t "cancel_email" %>
+  <%= t "hope" %>
+<% end %>

@@ -14,7 +14,7 @@ class Appointment < ApplicationRecord
   validates :day, presence: true
 
   delegate :full_name, :room, to: :doctor, prefix: true
-  delegate :full_name, to: :patient, prefix: true
+  delegate :full_name, :email, to: :patient, prefix: true
 
   scope :by_created_at, ->{order created_at: :asc}
   scope :appointment_exists, (lambda do |doctor_id, start_time, day|

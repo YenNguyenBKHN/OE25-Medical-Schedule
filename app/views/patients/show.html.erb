@@ -47,8 +47,8 @@
           <h5 class="blue_color"><%= t "medical_record" %></h5>
           <hr class="image_divider">
           <p>
-            <% if @patient.file.attached? %>
-              <iframe src=<%= url_for(@patient.file) %>, class="file_content"></iframe>
+            <% if @patient.files.attached? %>
+              <iframe src=<%= url_for(@patient.files.first) %>, class="file_content"></iframe>
             <% else %>
               <h5><%= t "no_file" %></h5>
             <% end %>

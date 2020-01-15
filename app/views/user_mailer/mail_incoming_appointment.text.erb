@@ -1,0 +1,12 @@
+<h1><%= t "app_name" %></h1>
+<%= t "hi" %>
+  <%= @appointment.patient_full_name %>,
+<%= t "incoming_appointment_notification" %>:
+<%= t "full_name" %>: <%= @appointment.patient_full_name %>
+<%= t "phone" %>: <%= @appointment.phone_patient %>
+<%= t "address" %>: <%= @appointment.address_patient %>
+<%= t "doctor" %>: <%= @appointment.doctor_full_name %>
+<%= t "appointment_time" %>: <%= I18n.l(@appointment.start_time, format: :short) %> <%= @appointment.day %>
+<%= t "room" %>: <%= @appointment.doctor_room %>
+<%= t "appointment_incoming" %>
+<%= t "hope" %>

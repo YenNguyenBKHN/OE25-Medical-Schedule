@@ -214,7 +214,7 @@ en:
   create_doctor_success: create doctor success
   create_doctor_not_success: create doctor not success
   create: Create
-  not_create_success: Not create success
+  not_create_success: create failed
   errors_blank: can't be blank
   errors_not_a_number: is not a number
   errors_taken: has already been taken
@@ -243,3 +243,25 @@ en:
   obituary: Obituary Tells Brutal  of Sister’s
   news: News
   rating: Thanks for using our service! Please rating for our doctor!
+  total: Total
+  add_news: Add news
+  news_not_found: News not found
+  create_new_success: Create news successfully!
+  content: Content
+  title: title
+  news_updated: News updated successfully!
+  update_failed: News update failed!
+  new_deleted: News deleted!
+  new_delete_failed: New delete failed!
+  edit_news: Edit
+  delete_news: Delete
+  appointment_created_notification: Appointment Created Notification!
+  remind_appointment_time: Remind about Appointment time!
+  create_appointment_notification: You have just created a booking request at our Medical Schedule website. Your schedule information is as follows
+  mail_appointment_result: Appointment Result!
+  accepted_email: You have recently created a request to schedule an appointment at the Medical Schedule website. Your request has been accepted. Please come to the hospital at the right time for the doctor to conduct the examination.
+  appointment_info: Your schedule information is as follows
+  hope: Hope you will have the best experience with our service! Thank you!
+  cancel_email: You have recently created a request to schedule an appointment at the Medical Schedule website. For some reason, we were unable to accommodate your request. Please schedule an appointment at a different time or other doctor so we can serve you.
+  incoming_appointment_notification: You have an appointment with our doctor tomorrow. Specific information about the examination schedule is as follows
+  appointment_incoming: We are sending this email to make sure you can schedule your arrival and arrive at your appointment on time.

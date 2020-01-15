@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  post '/rate' => 'rater#create', :as => 'rate'
   scope "(:locale)", locale: /en/ do
+    require "sidekiq/web"
+    mount Sidekiq::Web => "/sidekiq"
+
     root "static_pages#home"
 
     get "/home", to: "static_pages#home"
     get "/about", to: "static_pages#about"
+    post "/rate" => "rater#create", :as => "rate"
 
     devise_for :users, controllers: {
       registrations: "users/registrations",

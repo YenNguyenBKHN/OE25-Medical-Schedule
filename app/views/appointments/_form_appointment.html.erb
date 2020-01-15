@@ -33,18 +33,18 @@
       <div class="col-lg-6 col-md-12">
         <%= f.label t "doctor" %>
         <%= f.select :doctor_id, doctors,
-          {}, class: "select-be height-input-second" %>
+          {}, class: "select-be height-input-second bg_color" %>
       </div>
       <div class="col-lg-4 col-md-12">
         <%= f.label t "day" %>
-        <%= f.date_field :day, class: "height-input-second",
-         min: earliest_day_register, max: latest_day_register %>
+        <%= f.date_field :day, class: "height-input-second"
+          %>
       </div>
       <div>
         <div class="col-lg-2 col-md-12">
           <%= f.label t "start_time" %>
           <%= f.select :start_time, from_time_all,
-            {}, class: "select-be height-input-second" %>
+            {}, class: "select-be height-input-second bg_color" %>
         </div>
       </div>
     </div>

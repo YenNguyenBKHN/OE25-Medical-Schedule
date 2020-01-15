@@ -17,6 +17,7 @@ class AppointmentsController < ApplicationController
       params[:appointment][:start_time].to_time(:utc).ago(Settings.limit_time)
     @appointment = current_user.appointments.build appointment_params
     created_appointment
+    MailCreatedAppointmentJob.perform_later @appointment
   end
 
   def destroy
@@ -40,6 +41,11 @@ class AppointmentsController < ApplicationController
     else
       flash[:danger] = t "already_have_an_appointment"
     end
+    MailAppointmentResultJob.perform_later @appointment
+    if @appointment.accept?
+      MailIncomingAppointmentJob.set(wait_until: @appointment.day.to_time(:utc).ago(Settings.remind_time)).perform_later @appointment
+    end
+
     redirect_to appointments_path
   end
 
