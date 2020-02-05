@@ -2,32 +2,34 @@
   <%= form_for @appointment do |f| %>
     <%= render "shared/error_messages", object: f.object %>
     <% if current_user.present? %>
-      <div class="row">
-        <div class="col-lg-6 col-md-12">
-          <%= f.label t "full_name" %>
-          <%= f.text_field :full_name, class: "height-input-second",
-            disabled: true, value: current_user.full_name %>
+      <%= f.fields_for :patient do |ff| %>
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <%= ff.label t "full_name" %>
+            <%= ff.text_field :full_name, class: "height-input-second",
+              value: current_user.full_name %>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <%= ff.label t "phone" %>
+            <%= ff.text_field :phone, class: "height-input-second",
+              value: current_user.phone %>
+          </div>
         </div>
-        <div class="col-lg-6 col-md-12">
-          <%= f.label t "phone" %>
-          <%= f.text_field :phone_patient, class: "height-input-second",
-            value: current_user.phone %>
+        <div class="row">
+          <div class="col-md-12">
+            <%= ff.label t "email" %>
+            <%= ff.email_field :email, class: "height-input-second",
+              value: current_user.email %>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <%= f.label t "email" %>
-          <%= f.email_field :email, class: "height-input-second",
-            disabled: true, value: current_user.email %>
+        <div class="row">
+          <div class="col-md-12">
+            <%= ff.label t "address" %>
+            <%= ff.text_field :address, class: "height-input-second",
+              value: current_user.address %>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <%= f.label t "address" %>
-          <%= f.text_field :address_patient, class: "height-input-second",
-            value: current_user.address %>
-        </div>
-      </div>
+      <% end %>
     <% end %>
     <div class="row">
       <div class="col-lg-6 col-md-12">

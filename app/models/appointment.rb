@@ -1,11 +1,13 @@
 class Appointment < ApplicationRecord
-  APPOINTMENT_PARAMS = %i(phone_patient address_patient doctor_id day start_time
-    end_time message status).freeze
+  APPOINTMENT_PARAMS = %i(doctor_id day start_time end_time message status
+    patient_attributes: [full_name email phone address]).freeze
 
   enum status: {waiting: 0, accept: 1, cancel: 2}
 
   belongs_to :patient
   belongs_to :doctor
+
+  accepts_nested_attributes_for :patient
 
   validates :phone_patient, presence: true,
     length: {maximum: Settings.max_phone}
